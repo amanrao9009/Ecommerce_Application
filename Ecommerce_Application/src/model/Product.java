@@ -1,6 +1,8 @@
 package model;
 
-public class Product {
+import exception.NegativeValueException;
+
+public class Product   {
     private int product_id;
     private String name;
     private double price;
@@ -8,17 +10,28 @@ public class Product {
     private int stockQuantity;
 
     // Constructor
-    public Product(int product_id, String name, double price, String description, int stockQuantity) {
+    public Product(int product_id, String name, double price, String description, int stockQuantity) throws NegativeValueException {
+    	 if (price < 0) {
+             throw new NegativeValueException("Cost cannot be negative.");
+         }
+    	
         this.product_id = product_id;
         this.name = name;
         this.price = price;
         this.description = description;
         this.stockQuantity = stockQuantity;
+        
+        
+//        if (price < 0) {
+//            throw new NegativeValueException("Cost cannot be negative.");
+//        }
     }
     
     // Constructor
     public Product( String name, double price, String description, int stockQuantity) {
-        
+    	 if (price < 0) {
+             throw new NegativeValueException("Cost cannot be negative.");
+         }
         this.name = name;
         this.price = price;
         this.description = description;

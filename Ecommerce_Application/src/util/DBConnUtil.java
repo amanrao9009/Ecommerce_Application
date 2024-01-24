@@ -46,8 +46,9 @@ public class DBConnUtil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(prop.getProperty("db.url"));
-		System.out.println(prop.getProperty("db.password"));
+		
+//		System.out.println(prop.getProperty("db.url"));
+//		System.out.println(prop.getProperty("db.password"));
 		
 		
 		
